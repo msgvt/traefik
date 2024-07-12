@@ -9,7 +9,7 @@ services:
     volumes:
       - ./frontend:/var/www/html
     labels:
-      - "traefik.http.routers.site.rule=Host(`app.localhost`)"
+      - "traefik.http.routers.site.rule=Host(`app.app2.germanywestcentral.cloudapp.azure.com`)"
     depends_on:
       - traefik
       - api
@@ -37,7 +37,7 @@ services:
     volumes:
       - ./backend:/var/www/html
     labels:
-      - "traefik.http.routers.api.rule=(Host(`app.localhost`) && PathPrefix(`/api`))"
+      - "traefik.http.routers.api.rule=(Host(`app.app2.germanywestcentral.cloudapp.azure.com`) && PathPrefix(`/api`))"
     depends_on:
       - traefik
       - mysql
